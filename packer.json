@@ -11,6 +11,19 @@
                 "/bin/sh"
             ],
             "type": "docker"
+        },
+        {
+            "export_path": "{{template_dir}}/images/latest.tar",
+            "image": "alpine:3.2",
+            "run_command": [
+                "-d",
+                "-i",
+                "-t",
+                "{{.Image}}",
+                "/bin/sh"
+            ],
+            "type": "docker",
+            "name": "docker_plus_import"
         }
     ],
     "post-processors": [
