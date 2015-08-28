@@ -1,0 +1,36 @@
+{
+    "builders": [
+        {
+            "export_path": "{{template_dir}}/images/latest.tar",
+            "image": "alpine:3.2",
+            "run_command": [
+                "-d",
+                "-i",
+                "-t",
+                "{{.Image}}",
+                "/bin/sh"
+            ],
+            "type": "docker"
+        }
+    ],
+    "post-processors": [
+        {
+            "repository": "docker.clarin.eu/alpine",
+            "tag": "latest",
+            "type": "docker-import"
+        }
+    ],
+    "provisioners": [
+        {
+            "destination": "/etc/apk/repositories",
+            "source": "{{template_dir}}/resources/repositories",
+            "type": "file"
+        },
+        {
+            "scripts": [
+                "provision.sh"
+            ],
+            "type": "shell"
+        }
+    ]
+}
