@@ -56,7 +56,7 @@ docker import - 'docker.clarin.eu/alpine:latest' < 'images/latest.tar'
 === ... interactively
 
 Issue:
-+
+
 [source,Sh]
 ----
 docker run -v $(realpath resources/pyff_config/)':/srv/pyff_config/' -i -t --entrypoint='/bin/sh' 'docker.clarin.eu/alpine'
