@@ -5,8 +5,7 @@
 
 === Suggested requirements
 
-* The `realpath` command-line utility, e.g. the https://www.gnu.org/software/coreutils/manual/html_node/realpath-invocation.html[GNU coreutils one].
-* The `tac` command-line utility, also offered by GNU coreutils.
+* The `readlink` command-line utility, offered by http://www.gnu.org/software/coreutils/coreutils.html[GNU coreutils].
 
 == To build
 
@@ -24,7 +23,7 @@ docker create \
     --entrypoint='/bin/sh' \
     --name='alpine-latest' \
     --tty=true \
-    docker.clarin.eu/alpine'
+    'docker.clarin.eu/alpine'
 ----
 
 == To run
